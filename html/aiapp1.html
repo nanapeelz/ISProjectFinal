@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Eight Ball</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0f0a;
+      background-image: 
+        url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png'),
+        url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-blend-mode: multiply;
+      background-repeat: repeat;
+      background-size: auto;
+      color: #c6ffe2;
+      text-align: center;
+      padding: 2em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #00d38a;
+      text-shadow: 0 0 20px #007f5f, 0 0 30px #004d3a;
+    }
+
+    input[type="text"] {
+      padding: 0.6em;
+      font-size: 1em;
+      width: 60%;
+      border: 1px solid #00d38a;
+      border-radius: 10px;
+      background-color: #121a12;
+      color: #c6ffe2;
+      box-shadow: 0 0 6px #004d3a inset;
+    }
+
+    input[type="text"]::placeholder {
+      color: #66ffc2;
+    }
+
+    button {
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      background-color: #003a2a;
+      color: #00d38a;
+      border: 1px solid #00d38a;
+      border-radius: 10px;
+      margin-left: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 10px #007f5f;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #005c44;
+      transform: scale(1.05);
+    }
+
+    #answer {
+      margin-top: 2em;
+      font-size: 1.5em;
+      font-style: italic;
+      color: #8affd1;
+      text-shadow: 0 0 8px #00d38a, 0 0 16px #007f5f;
+    }
+
+    .back-to-top {
+      text-align: center;
+      position:fixed;
+      bottom: 30px;
+      right: 700px;
+      left: 700px;
+      background-color: #003a2a;
+      color: #00d38a;
+      border: 1px solid #00d38a;
+      border-radius: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #007f5f;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .back-to-top:hover {
+      background-color: #005c44;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Ask the Enchanted Eight Ball</h1>
+  <input type="text" id="question" placeholder="Ask your magical question..." onkeydown="handleKey(event)" />
+  <button onclick="getAnswer()">Ask</button>
+  <div id="answer"></div>
+
+  <!-- Back to Top Button -->
+  <a class="back-to-top" href="../html/myscratch1.html">Back To Scratch</a>
+
+  <script>
+    const answers = [
+      "It is certain",
+      "Without a doubt",
+      "You may rely on it",
+      "Yes, definitely",
+      "It is decidedly so",
+      "Most likely",
+      "Outlook good",
+      "Yes",
+      "Signs point to yes",
+      "Reply hazy, try again",
+      "Ask again later",
+      "Better not tell you now",
+      "Cannot predict now",
+      "Concentrate and ask again",
+      "Don't count on it",
+      "My reply is no",
+      "My sources say no",
+      "Outlook not so good",
+      "Very doubtful"
+    ];
+
+    function getAnswer() {
+      const questionInput = document.getElementById("question");
+      const answerDiv = document.getElementById("answer");
+      const question = questionInput.value.trim();
+
+      if (question === "") {
+        answerDiv.textContent = "Please ask a question!";
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      const answer = answers[randomIndex];
+      answerDiv.textContent = answer;
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter") {
+        getAnswer();
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

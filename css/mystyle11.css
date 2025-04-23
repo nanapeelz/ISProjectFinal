@@ -1,0 +1,108 @@
+.body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.common{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00d38a;
+}
+
+.header{
+    background-color:#00d38a;
+    color: white;
+    height: 83px;
+    line-height: 10px;
+    text-align: center;
+}
+
+.mainbody{
+    background-color: #0a0f0a;
+      background-image: 
+        url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png'),
+        url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-blend-mode: multiply;
+      background-repeat: repeat;
+      background-size: auto;
+      color: #c6ffe2;
+      text-align: center;
+      padding: 2em;
+    background-repeat: space;
+}
+
+.footer{
+    background-color: black;
+    color: #00d38a;
+    position: fixed;
+    bottom: 0px;
+    left: 5px;
+    right: 5px;
+    height: 25px;
+    line-height: 25px;
+}
+
+img{
+    width:25%;
+    margin-left:auto;
+    margin-right: auto;
+    width: 385px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px 4px #00d38a;
+      transition: box-shadow 0.3s 
+}
+
+nav{
+    background-color: #00d38a;
+    padding: 7px;
+    overflow:hidden;
+}
+
+nav a{
+    color: white;
+    padding:10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover{
+    background-color: #02b475;
+    text-decoration: underline;
+}
+
+p{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #00d38a;
+    font-size: 20px;
+}
+#top{
+    text-decoration: none;
+}
+.emphasizeText{
+    font-style: italic;
+    color: grey;
+}
+
+
+.centered-list{
+    padding-left: 0;
+    list-style-position: outside;
+    margin: 0 auto;
+    display: table;
+    text-align: left;
+    color:#00d38a;
+}
+
+.centered{
+    display:flex; justify-content: center;
+    text-decoration: none;
+}
